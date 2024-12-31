@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dlt3fp0pupd2p"
+path="res://.godot/imported/hit.wav-679fb969685db47415691462a0f886de.sample"
+
+[deps]
+
+source_file="res://#1 FlappyBird/Assets/sounds/SFX/hit.wav"
+dest_files=["res://.godot/imported/hit.wav-679fb969685db47415691462a0f886de.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

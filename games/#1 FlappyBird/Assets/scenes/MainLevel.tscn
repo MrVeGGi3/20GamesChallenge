@@ -1,0 +1,66 @@
+[gd_scene load_steps=7 format=3 uid="uid://djpu0n00mncoi"]
+
+[ext_resource type="Script" path="res://#1 FlappyBird/Assets/scripts/main_level.gd" id="1_4sjrc"]
+[ext_resource type="Texture2D" uid="uid://daty3crrj6yp2" path="res://#1 FlappyBird/Assets/images/background/background-day.png" id="1_vqulh"]
+[ext_resource type="PackedScene" uid="uid://8q4v7eojlalk" path="res://#1 FlappyBird/Assets/scenes/Ground.tscn" id="2_usxaf"]
+[ext_resource type="PackedScene" uid="uid://dulnos3ey8wt3" path="res://#1 FlappyBird/Assets/scenes/Bird.tscn" id="3_i4yr1"]
+[ext_resource type="PackedScene" uid="uid://chyv25wtx7pa5" path="res://#1 FlappyBird/Assets/scenes/PipeSpawner.tscn" id="4_npe1f"]
+[ext_resource type="FontFile" uid="uid://r3wkfxmrw5cx" path="res://#1 FlappyBird/Assets/fonts/FlappyBirdRegular-9Pq0.ttf" id="6_auutf"]
+
+[node name="MainLevel" type="Node2D"]
+script = ExtResource("1_4sjrc")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(580, 328)
+zoom = Vector2(3, 1)
+limit_left = -9999885
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(585, 297)
+scale = Vector2(1.35134, 1.13547)
+texture = ExtResource("1_vqulh")
+
+[node name="PipeSpawner" parent="." instance=ExtResource("4_npe1f")]
+position = Vector2(904, 327)
+
+[node name="Bird" parent="." instance=ExtResource("3_i4yr1")]
+position = Vector2(582, 328)
+collision_mask = 6
+
+[node name="Ground" parent="." instance=ExtResource("2_usxaf")]
+position = Vector2(586, 598)
+scale = Vector2(1.20979, 1.20979)
+
+[node name="Score" type="Label" parent="."]
+offset_left = 403.0
+offset_top = 33.0
+offset_right = 443.0
+offset_bottom = 56.0
+theme_override_fonts/font = ExtResource("6_auutf")
+theme_override_font_sizes/font_size = 40
+text = "Score:"
+
+[node name="MaxScore" type="Label" parent="."]
+offset_left = 667.0
+offset_top = 37.0
+offset_right = 768.0
+offset_bottom = 69.0
+theme_override_fonts/font = ExtResource("6_auutf")
+theme_override_font_sizes/font_size = 30
+text = "MaxScore:"
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_left = 418.0
+offset_top = 77.0
+offset_right = 458.0
+offset_bottom = 100.0
+theme_override_fonts/font = ExtResource("6_auutf")
+theme_override_font_sizes/font_size = 25
+
+[node name="MaxScoreLabel" type="Label" parent="."]
+offset_left = 694.0
+offset_top = 69.0
+offset_right = 734.0
+offset_bottom = 92.0
+theme_override_fonts/font = ExtResource("6_auutf")
+theme_override_font_sizes/font_size = 25

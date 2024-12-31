@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://8q4v7eojlalk"]
+
+[ext_resource type="Texture2D" uid="uid://dd1ugwptxk571" path="res://#1 FlappyBird/Assets/images/ground/base.png" id="1_6kxgd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ksq6"]
+size = Vector2(337, 110)
+
+[node name="Ground" type="StaticBody2D" groups=["ground"]]
+disable_mode = 1
+collision_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_6kxgd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_7ksq6")
