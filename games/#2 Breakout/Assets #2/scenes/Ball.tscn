@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dber40yj3iw2"]
+
+[ext_resource type="Script" path="res://#2 Breakout/Assets #2/scripts/ball.gd" id="1_tthei"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_qafox"]
+friction = 0.0
+bounce = 1.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_lbkj0"]
+radius = 5.0
+height = 10.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f3wf6"]
+radius = 5.0
+
+[node name="Ball" type="RigidBody2D" groups=["ball"]]
+collision_layer = 8
+collision_mask = 3
+physics_material_override = SubResource("PhysicsMaterial_qafox")
+gravity_scale = 0.0
+linear_damp_mode = 1
+angular_damp_mode = 1
+script = ExtResource("1_tthei")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+mesh = SubResource("SphereMesh_lbkj0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_f3wf6")

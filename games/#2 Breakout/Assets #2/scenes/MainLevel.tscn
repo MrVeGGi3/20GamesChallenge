@@ -1,0 +1,122 @@
+[gd_scene load_steps=11 format=3 uid="uid://h1r0okvud1k"]
+
+[ext_resource type="Script" path="res://#2 Breakout/Assets #2/scripts/main_level.gd" id="1_y7gvd"]
+[ext_resource type="PackedScene" uid="uid://2i4u6qr1t0vc" path="res://#2 Breakout/Assets #2/scenes/player.tscn" id="2_qkeu6"]
+[ext_resource type="PackedScene" uid="uid://dber40yj3iw2" path="res://#2 Breakout/Assets #2/scenes/Ball.tscn" id="3_4kexm"]
+[ext_resource type="PackedScene" uid="uid://b6mc060gv2cdi" path="res://#2 Breakout/Assets #2/scenes/block.tscn" id="4_av1tr"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_rrh8o"]
+friction = 0.0
+bounce = 1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xgora"]
+size = Vector2(56.5412, 24)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8s3oq"]
+friction = 0.0
+bounce = 1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u8bq2"]
+size = Vector2(80.7692, 25)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_icqnx"]
+friction = 0.0
+bounce = 1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cqsfs"]
+size = Vector2(138.716, 16.5178)
+
+[node name="MainLevel" type="Node2D"]
+script = ExtResource("1_y7gvd")
+
+[node name="Player" parent="." groups=["player"] instance=ExtResource("2_qkeu6")]
+position = Vector2(578, 606)
+scale = Vector2(0.295744, 0.295744)
+
+[node name="Ball" parent="." instance=ExtResource("3_4kexm")]
+
+[node name="Labels" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ScoreLabel" type="Label" parent="Labels"]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 64.0
+offset_right = 99.0
+offset_bottom = 133.0
+theme_override_font_sizes/font_size = 50
+text = "0"
+
+[node name="LifeLabel" type="Label" parent="Labels"]
+layout_mode = 0
+offset_left = 1074.0
+offset_top = 67.0
+offset_right = 1114.0
+offset_bottom = 136.0
+theme_override_font_sizes/font_size = 50
+text = "3"
+
+[node name="Walls" type="Node2D" parent="."]
+
+[node name="Wall1" type="StaticBody2D" parent="Walls"]
+position = Vector2(-9, 4)
+collision_layer = 2
+collision_mask = 9
+physics_material_override = SubResource("PhysicsMaterial_rrh8o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall1"]
+position = Vector2(27, 320)
+rotation = 1.5708
+scale = Vector2(11.16, 1)
+shape = SubResource("RectangleShape2D_xgora")
+
+[node name="Wall2" type="StaticBody2D" parent="Walls"]
+position = Vector2(1164, 6)
+collision_layer = 2
+collision_mask = 9
+physics_material_override = SubResource("PhysicsMaterial_8s3oq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall2"]
+position = Vector2(2.5, 312)
+rotation = -1.5708
+scale = Vector2(7.8, 1)
+shape = SubResource("RectangleShape2D_u8bq2")
+
+[node name="Wall3" type="StaticBody2D" parent="Walls"]
+position = Vector2(641, -5)
+rotation = 1.5708
+collision_layer = 2
+collision_mask = 9
+physics_material_override = SubResource("PhysicsMaterial_icqnx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall3"]
+position = Vector2(27.4959, 52)
+rotation = 1.5708
+scale = Vector2(8.39127, 1.99834)
+shape = SubResource("RectangleShape2D_cqsfs")
+
+[node name="Blocks" type="Node2D" parent="."]
+
+[node name="Block2" parent="Blocks" instance=ExtResource("4_av1tr")]
+position = Vector2(251, 212)
+
+[node name="Block3" parent="Blocks" instance=ExtResource("4_av1tr")]
+position = Vector2(412, 211)
+
+[node name="Block4" parent="Blocks" instance=ExtResource("4_av1tr")]
+position = Vector2(569, 211)
+
+[node name="Block5" parent="Blocks" instance=ExtResource("4_av1tr")]
+position = Vector2(724, 212)
+
+[node name="Block6" parent="Blocks" instance=ExtResource("4_av1tr")]
+position = Vector2(874, 214)
+
+[node name="Block7" parent="Blocks" instance=ExtResource("4_av1tr")]
+position = Vector2(1039, 213)
+
+[node name="Block8" parent="Blocks" instance=ExtResource("4_av1tr")]
+position = Vector2(103, 211)
