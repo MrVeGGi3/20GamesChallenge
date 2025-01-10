@@ -1,0 +1,108 @@
+[gd_scene load_steps=10 format=3 uid="uid://el3ft4hyx5rg"]
+
+[ext_resource type="Script" path="res://#3 River Raid/Assets #3/scripts/player.gd" id="1_306fa"]
+[ext_resource type="Texture2D" uid="uid://rwik0ru7fl0l" path="res://#3 River Raid/Assets #3/images/player/Sprite-0001-Sheet.png" id="2_gaiig"]
+[ext_resource type="Script" path="res://#3 River Raid/Assets #3/scripts/ui.gd" id="3_1f12w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4dme8"]
+atlas = ExtResource("2_gaiig")
+region = Rect2(0, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gjset"]
+atlas = ExtResource("2_gaiig")
+region = Rect2(50, 0, 50, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2gd80"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4dme8")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gjset")
+}],
+"loop": true,
+"name": &"turn",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oci4c"]
+radius = 25.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_13im1"]
+bg_color = Color(0, 0.636602, 0.952097, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_syptm"]
+bg_color = Color(0, 0.714349, 0.423741, 1)
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+collision_mask = 384
+script = ExtResource("1_306fa")
+
+[node name="ShootTimer" type="Timer" parent="." groups=["player"]]
+wait_time = 0.5
+
+[node name="PlayerAnimSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_2gd80")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="ShootMarker2D" type="Marker2D" parent="."]
+position = Vector2(-2, -22)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 1)
+shape = SubResource("CircleShape2D_oci4c")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(4, -241)
+
+[node name="UI" type="Control" parent="Camera2D"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = 241.0
+offset_right = -4.0
+offset_bottom = 241.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_1f12w")
+
+[node name="ScoreLabel" type="Label" parent="Camera2D/UI"]
+layout_mode = 0
+offset_left = -496.0
+offset_top = -111.0
+offset_right = -416.0
+offset_bottom = -69.0
+theme_override_font_sizes/font_size = 30
+text = "Score"
+
+[node name="LifeLabel" type="Label" parent="Camera2D/UI"]
+layout_mode = 0
+offset_left = -494.0
+offset_top = -68.0
+offset_right = -427.0
+offset_bottom = -26.0
+theme_override_font_sizes/font_size = 30
+text = "Lifes"
+
+[node name="FuelProgressBar" type="ProgressBar" parent="Camera2D/UI"]
+layout_mode = 0
+offset_left = -494.0
+offset_top = -139.0
+offset_right = -394.0
+offset_bottom = -112.0
+theme_override_styles/background = SubResource("StyleBoxFlat_13im1")
+theme_override_styles/fill = SubResource("StyleBoxFlat_syptm")
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+energy = 2.0
+
+[connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]

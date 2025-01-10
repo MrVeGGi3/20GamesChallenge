@@ -1,0 +1,121 @@
+[gd_scene load_steps=16 format=3 uid="uid://32hp7dgk6qmv"]
+
+[ext_resource type="Script" path="res://#3 River Raid/Assets #3/scripts/level_1.gd" id="1_5iikd"]
+[ext_resource type="PackedScene" uid="uid://el3ft4hyx5rg" path="res://#3 River Raid/Assets #3/scenes/player.tscn" id="1_ng1sk"]
+[ext_resource type="Shader" path="res://#3 River Raid/Assets #3/shader/Level1.gdshader" id="1_ovtp1"]
+[ext_resource type="Texture2D" uid="uid://dalqb51egu1kj" path="res://#3 River Raid/Assets #3/images/water.png" id="2_karjw"]
+[ext_resource type="PackedScene" uid="uid://1koy10lrhgc0" path="res://#3 River Raid/Assets #3/scenes/brigde.tscn" id="5_7uon7"]
+[ext_resource type="PackedScene" uid="uid://b1u50v15apubv" path="res://#3 River Raid/Assets #3/scenes/Fuel.tscn" id="6_usktw"]
+[ext_resource type="PackedScene" uid="uid://bktu8c1ok12wj" path="res://#3 River Raid/Assets #3/scenes/AirplaneSpawnerR.tscn" id="7_6gh1k"]
+[ext_resource type="PackedScene" uid="uid://vef6ebtvlqmg" path="res://#3 River Raid/Assets #3/scenes/AirplaneSpawnerL.tscn" id="8_ttwrh"]
+[ext_resource type="PackedScene" uid="uid://bxqys2ydgie4i" path="res://#3 River Raid/Assets #3/scenes/Enemy_helicopter.tscn" id="9_q5hjw"]
+[ext_resource type="PackedScene" uid="uid://bxcel0aeli35j" path="res://#3 River Raid/Assets #3/scenes/Enemy_boat.tscn" id="10_ldhmm"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_bbb22"]
+noise_type = 0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_7ak75"]
+seamless = true
+noise = SubResource("FastNoiseLite_bbb22")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xp0cy"]
+shader = ExtResource("1_ovtp1")
+shader_parameter/speed = Vector2(0.5, 0.2)
+shader_parameter/wave_strength = 0.1
+shader_parameter/distortion = 0.01
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_7ak75")
+
+[sub_resource type="QuadMesh" id="QuadMesh_ypryj"]
+size = Vector2(20, 8000)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qahwk"]
+size = Vector2(20, 8000)
+
+[node name="Level1" type="Node2D"]
+script = ExtResource("1_5iikd")
+
+[node name="Rio" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_xp0cy")
+position = Vector2(570, -6702)
+scale = Vector2(-1.84632, -96.8441)
+texture = ExtResource("2_karjw")
+
+[node name="Collumn1" type="MeshInstance2D" parent="."]
+position = Vector2(300, -3138)
+mesh = SubResource("QuadMesh_ypryj")
+
+[node name="CollumnArea" type="Area2D" parent="Collumn1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collumn1/CollumnArea"]
+shape = SubResource("RectangleShape2D_qahwk")
+
+[node name="Collumn2" type="MeshInstance2D" parent="."]
+position = Vector2(827, -3150)
+mesh = SubResource("QuadMesh_ypryj")
+
+[node name="CollumnArea" type="Area2D" parent="Collumn2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collumn2/CollumnArea"]
+shape = SubResource("RectangleShape2D_qahwk")
+
+[node name="Player" parent="." instance=ExtResource("1_ng1sk")]
+z_index = 1
+position = Vector2(593, 616)
+
+[node name="Brigde2" parent="Player" instance=ExtResource("5_7uon7")]
+position = Vector2(-230, -7126)
+scale = Vector2(2.15612, 2.15612)
+
+[node name="Bridges" type="Node2D" parent="."]
+
+[node name="Brigde" parent="Bridges" instance=ExtResource("5_7uon7")]
+position = Vector2(324, -82)
+scale = Vector2(2.15612, 2.15612)
+
+[node name="Brigde2" parent="Bridges" instance=ExtResource("5_7uon7")]
+position = Vector2(330, -3702)
+scale = Vector2(2.15612, 2.15612)
+
+[node name="Fuels" type="Node2D" parent="."]
+
+[node name="Fuel" parent="Fuels" instance=ExtResource("6_usktw")]
+position = Vector2(549, -1049)
+
+[node name="Fuel2" parent="Fuels" instance=ExtResource("6_usktw")]
+position = Vector2(588, -4703)
+
+[node name="AirplaneSpawners" type="Node2D" parent="."]
+
+[node name="AirplaneSpawner" parent="AirplaneSpawners" instance=ExtResource("7_6gh1k")]
+position = Vector2(1001, -588)
+
+[node name="AirplaneSpawner3" parent="AirplaneSpawners" instance=ExtResource("7_6gh1k")]
+position = Vector2(939, -2217)
+
+[node name="AirplaneSpawner2" parent="AirplaneSpawners" instance=ExtResource("8_ttwrh")]
+position = Vector2(151, -1397)
+
+[node name="AirplaneSpawner4" parent="AirplaneSpawners" instance=ExtResource("8_ttwrh")]
+position = Vector2(159, -2756)
+
+[node name="Helicopters" type="Node2D" parent="."]
+
+[node name="Enemy_helicopter" parent="Helicopters" instance=ExtResource("9_q5hjw")]
+position = Vector2(673, -1473)
+
+[node name="Enemy_helicopter2" parent="Helicopters" instance=ExtResource("9_q5hjw")]
+position = Vector2(424, -2711)
+
+[node name="Boats" type="Node2D" parent="."]
+
+[node name="EnemyBoat" parent="Boats" instance=ExtResource("10_ldhmm")]
+position = Vector2(693, -2156)
+
+[node name="EnemyBoat2" parent="Boats" instance=ExtResource("10_ldhmm")]
+position = Vector2(538, -5516)
+
+[node name="EnemyBoat3" parent="Boats" instance=ExtResource("10_ldhmm")]
+position = Vector2(565, -6081)
+
+[connection signal="body_entered" from="Collumn1/CollumnArea" to="." method="_on_collumn_area_body_entered"]
+[connection signal="body_entered" from="Collumn2/CollumnArea" to="." method="_on_collumn_area_body_entered"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://chyv25wtx7pa5"]
 
-[ext_resource type="Script" path="res://#1 FlappyBird/Assets/sprites/pipe_spawner.gd" id="1_m5i8j"]
+[ext_resource type="Script" path="res://#1 FlappyBird/Assets/scripts/pipe_spawner.gd" id="1_m5i8j"]
 
 [node name="PipeSpawner" type="Node2D"]
 script = ExtResource("1_m5i8j")

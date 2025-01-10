@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 
 FlappyGM="*res://#1 FlappyBird/Assets/scripts/FlappyGM.gd"
 BreakoutGm="*res://#2 Breakout/Assets #2/scripts/BreakoutGM.gd"
+RiverRaidGm="*res://#3 River Raid/Assets #3/scripts/RiverRaidGM.gd"
 
 [display]
 
@@ -61,9 +62,13 @@ down={
 [layer_names]
 
 2d_physics/layer_1="Player"
+2d_physics/layer_2="environment"
 2d_physics/layer_4="breakout_ball"
 2d_physics/layer_5="breakout_blocks"
 2d_physics/layer_6="breakout_ball"
+2d_physics/layer_7="RiverRaidShoot"
+2d_physics/layer_8="RiverRaidEnemies"
+2d_physics/layer_9="Fuel"
 
 [rendering]
 

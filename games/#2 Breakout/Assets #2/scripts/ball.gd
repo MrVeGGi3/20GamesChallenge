@@ -22,4 +22,6 @@ func _set_movement():
 
 func _set_position(position : Vector2):
 	global_transform.origin = position
-	
+
+func _add_speed(add_speed):
+	linear_velocity.y += add_speed
