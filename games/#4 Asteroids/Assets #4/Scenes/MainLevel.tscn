@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://d3262prklh14g"]
+
+[ext_resource type="Texture2D" uid="uid://hevdittppi3r" path="res://#4 Asteroids/Assets #4/images/background/Background.png" id="1_a7s8r"]
+[ext_resource type="Script" path="res://#4 Asteroids/Assets #4/Scripts/main_level.gd" id="1_m07ln"]
+[ext_resource type="Script" path="res://#4 Asteroids/Assets #4/Scripts/ui_hud.gd" id="2_mjah1"]
+[ext_resource type="PackedScene" uid="uid://duhhkfbemxqfm" path="res://#4 Asteroids/Assets #4/Scenes/Player.tscn" id="4_wdd4y"]
+[ext_resource type="PackedScene" uid="uid://ca2whuryy7kbn" path="res://#4 Asteroids/Assets #4/Scenes/MeteorSpawner.tscn" id="5_42lql"]
+
+[node name="MainLevel" type="Node2D"]
+script = ExtResource("1_m07ln")
+
+[node name="UI_HUD" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_mjah1")
+
+[node name="Background" type="TextureRect" parent="UI_HUD"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_a7s8r")
+
+[node name="ScoreLabel" type="Label" parent="UI_HUD"]
+layout_mode = 0
+offset_left = 85.0
+offset_top = 31.0
+offset_right = 125.0
+offset_bottom = 54.0
+theme_override_font_sizes/font_size = 40
+
+[node name="Player" parent="." instance=ExtResource("4_wdd4y")]
+position = Vector2(591, 355)
+
+[node name="SpawnPoint" type="Marker2D" parent="."]
+position = Vector2(593, 334)
+
+[node name="MeteorSpawner" parent="." instance=ExtResource("5_42lql")]
+position = Vector2(585, 43)

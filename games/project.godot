@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 FlappyGM="*res://#1 FlappyBird/Assets/scripts/FlappyGM.gd"
 BreakoutGm="*res://#2 Breakout/Assets #2/scripts/BreakoutGM.gd"
 RiverRaidGm="*res://#3 River Raid/Assets #3/scripts/RiverRaidGM.gd"
+AsteroidsGm="*res://#4 Asteroids/Assets #4/Scripts/AsteroidsGM.gd"
 
 [display]
 

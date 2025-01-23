@@ -1,0 +1,60 @@
+[gd_scene load_steps=8 format=3 uid="uid://duhhkfbemxqfm"]
+
+[ext_resource type="Script" path="res://#4 Asteroids/Assets #4/Scripts/player.gd" id="1_7ealv"]
+[ext_resource type="Texture2D" uid="uid://dypoh26htuhg7" path="res://#4 Asteroids/Assets #4/images/Ship.png" id="2_tyauf"]
+[ext_resource type="Texture2D" uid="uid://bfxjxjs1ru6da" path="res://#4 Asteroids/Assets #4/images/jet ship.png" id="3_qs1ei"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lidr0"]
+size = Vector2(96, 82)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8losa"]
+atlas = ExtResource("3_qs1ei")
+region = Rect2(0, 0, 95, 95)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j7vb4"]
+atlas = ExtResource("2_tyauf")
+region = Rect2(0, 0, 95, 95)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i63hl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8losa")
+}],
+"loop": true,
+"name": &"boost",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j7vb4")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(1, 0)
+script = ExtResource("1_7ealv")
+
+[node name="LookAtMarker2D" type="Marker2D" parent="."]
+position = Vector2(0, -49)
+
+[node name="ShootMarker2D" type="Marker2D" parent="."]
+position = Vector2(-1, -22)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.999998, -10)
+shape = SubResource("RectangleShape2D_lidr0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, -2)
+sprite_frames = SubResource("SpriteFrames_i63hl")
+animation = &"boost"
+autoplay = "idle"
+
+[node name="RespawnIvencibilityTimer" type="Timer" parent="."]
+wait_time = 2.5
+
+[connection signal="timeout" from="RespawnIvencibilityTimer" to="." method="_on_respawn_ivencibility_timer_timeout"]

@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://ca2whuryy7kbn"]
+
+[ext_resource type="Script" path="res://#4 Asteroids/Assets #4/Scripts/meteor_spawner.gd" id="1_ylxny"]
+
+[node name="MeteorSpawner" type="Node2D"]
+script = ExtResource("1_ylxny")
+
+[node name="SpawnMeteorPoint" type="Marker2D" parent="."]
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 5.0
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3tk8kxc1sgws"]
+
+[ext_resource type="Script" path="res://#4 Asteroids/Assets #4/Scripts/small_meteor.gd" id="1_0dxva"]
+[ext_resource type="Texture2D" uid="uid://klyl3csysvyo" path="res://#4 Asteroids/Assets #4/images/Small Meteor.png" id="1_es3wc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aqy31"]
+size = Vector2(11, 11)
+
+[node name="SmallMeteor" type="Area2D" groups=["Meteor"]]
+script = ExtResource("1_0dxva")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_es3wc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, -2.5)
+shape = SubResource("RectangleShape2D_aqy31")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

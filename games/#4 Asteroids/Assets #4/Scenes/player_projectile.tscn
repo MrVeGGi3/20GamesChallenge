@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://ctjgqg23c12cf"]
+
+[ext_resource type="Script" path="res://#4 Asteroids/Assets #4/Scripts/player_projectile.gd" id="1_gg4pb"]
+[ext_resource type="AudioStream" uid="uid://c2whsyys7etrf" path="res://#4 Asteroids/Assets #4/sounds/SFX/proj_sound.wav" id="2_ia67u"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_6po0u"]
+size = Vector3(0.5, 3, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pbqcs"]
+size = Vector2(0.5, 3)
+
+[node name="PlayerProjectile" type="Area2D"]
+script = ExtResource("1_gg4pb")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+mesh = SubResource("BoxMesh_6po0u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_pbqcs")
+
+[node name="AutoDestructionTimer" type="Timer" parent="."]
+wait_time = 0.8
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_ia67u")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="timeout" from="AutoDestructionTimer" to="." method="_on_auto_destruction_timer_timeout"]
