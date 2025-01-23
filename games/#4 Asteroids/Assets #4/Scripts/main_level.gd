@@ -1,10 +1,13 @@
 extends Node2D
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+@onready var path_follow_2d: PathFollow2D = $Path2D/PathFollow2D
+@onready var progress_speed : float = 0.01
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	path_follow_2d.progress_ratio += progress_speed * delta
+	
+	if path_follow_2d.progress_ratio == 1.0:
+		path_follow_2d.progress_ratio -= progress_speed * delta
+	elif path_follow_2d.progress_ratio == 0.0:
+		path_follow_2d.progress_ratio += progress_speed * delta

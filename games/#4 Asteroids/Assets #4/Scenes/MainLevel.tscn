@@ -1,10 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://d3262prklh14g"]
+[gd_scene load_steps=7 format=3 uid="uid://d3262prklh14g"]
 
 [ext_resource type="Texture2D" uid="uid://hevdittppi3r" path="res://#4 Asteroids/Assets #4/images/background/Background.png" id="1_a7s8r"]
 [ext_resource type="Script" path="res://#4 Asteroids/Assets #4/Scripts/main_level.gd" id="1_m07ln"]
 [ext_resource type="Script" path="res://#4 Asteroids/Assets #4/Scripts/ui_hud.gd" id="2_mjah1"]
 [ext_resource type="PackedScene" uid="uid://duhhkfbemxqfm" path="res://#4 Asteroids/Assets #4/Scenes/Player.tscn" id="4_wdd4y"]
 [ext_resource type="PackedScene" uid="uid://ca2whuryy7kbn" path="res://#4 Asteroids/Assets #4/Scenes/MeteorSpawner.tscn" id="5_42lql"]
+
+[sub_resource type="Curve2D" id="Curve2D_ifb4n"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 5, 648, 0, 0, 0, 0, 0, 9, 0, 0, 0, 0, 1150, 5, 0, 0, 0, 0, 1152, 649, 0, 0, 0, 0, 9, 647)
+}
+point_count = 5
 
 [node name="MainLevel" type="Node2D"]
 script = ExtResource("1_m07ln")
@@ -38,5 +44,15 @@ position = Vector2(591, 355)
 [node name="SpawnPoint" type="Marker2D" parent="."]
 position = Vector2(593, 334)
 
-[node name="MeteorSpawner" parent="." instance=ExtResource("5_42lql")]
-position = Vector2(585, 43)
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_ifb4n")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(5, 648)
+rotation = -1.57862
+loop = false
+
+[node name="MeteorSpawner" parent="Path2D/PathFollow2D" instance=ExtResource("5_42lql")]
+position = Vector2(-1.00787, 0.992249)
+rotation = 1.57862
+scale = Vector2(1, 1)
