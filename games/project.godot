@@ -70,6 +70,7 @@ down={
 2d_physics/layer_7="RiverRaidShoot"
 2d_physics/layer_8="RiverRaidEnemies"
 2d_physics/layer_9="Fuel"
+2d_physics/layer_10="Ghost"
 
 [rendering]
 

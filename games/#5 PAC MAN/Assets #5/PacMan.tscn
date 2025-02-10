@@ -1,0 +1,128 @@
+[gd_scene load_steps=17 format=3 uid="uid://dlxk2xnysknbl"]
+
+[ext_resource type="Texture2D" uid="uid://cjh8cuhmgl0dv" path="res://#5 PAC MAN/Assets #5/images/Pacman-removebg-preview.png" id="1_f0vku"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5eo81"]
+atlas = ExtResource("1_f0vku")
+region = Rect2(49, 0, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vpm31"]
+atlas = ExtResource("1_f0vku")
+region = Rect2(65, 0, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iix5o"]
+atlas = ExtResource("1_f0vku")
+region = Rect2(81, 0, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_75tj0"]
+atlas = ExtResource("1_f0vku")
+region = Rect2(97, 0, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_je2ol"]
+atlas = ExtResource("1_f0vku")
+region = Rect2(113, 0, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jjv6n"]
+atlas = ExtResource("1_f0vku")
+region = Rect2(129, 0, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k82a4"]
+atlas = ExtResource("1_f0vku")
+region = Rect2(145, 0, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xx4g8"]
+atlas = ExtResource("1_f0vku")
+region = Rect2(161, 0, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rej01"]
+atlas = ExtResource("1_f0vku")
+region = Rect2(177, 0, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qpyh0"]
+atlas = ExtResource("1_f0vku")
+region = Rect2(193, 0, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u2rfa"]
+atlas = ExtResource("1_f0vku")
+region = Rect2(209, 0, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4rqyn"]
+atlas = ExtResource("1_f0vku")
+region = Rect2(33, 0, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h14n5"]
+atlas = ExtResource("1_f0vku")
+region = Rect2(1, 0, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ma6aq"]
+atlas = ExtResource("1_f0vku")
+region = Rect2(17, 0, 16, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6fjje"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5eo81")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vpm31")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iix5o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_75tj0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_je2ol")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jjv6n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k82a4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xx4g8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rej01")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qpyh0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u2rfa")
+}],
+"loop": true,
+"name": &"death",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4rqyn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h14n5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4rqyn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ma6aq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4rqyn")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 10.0
+}]
+
+[node name="PacMan" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_6fjje")
+animation = &"death"
+autoplay = "walking"
+frame_progress = 0.14455

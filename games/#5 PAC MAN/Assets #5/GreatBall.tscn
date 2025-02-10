@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://d14dlj5dy817n"]
+
+[node name="GreatBall" type="Area2D"]

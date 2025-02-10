@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bocxuswj42l65"
+path="res://.godot/imported/START GAME  - AUDIO FROM JAYUZUMI.COM.mp3-d2258bbe8b1c700e85eacdda5f146219.mp3str"
+
+[deps]
+
+source_file="res://#5 PAC MAN/Assets #5/sounds/BGM/START GAME  - AUDIO FROM JAYUZUMI.COM.mp3"
+dest_files=["res://.godot/imported/START GAME  - AUDIO FROM JAYUZUMI.COM.mp3-d2258bbe8b1c700e85eacdda5f146219.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -55,4 +55,3 @@ loop = false
 [node name="MeteorSpawner" parent="Path2D/PathFollow2D" instance=ExtResource("5_42lql")]
 position = Vector2(-1.00787, 0.992249)
 rotation = 1.57862
-scale = Vector2(1, 1)
