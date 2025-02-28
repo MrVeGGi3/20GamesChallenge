@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxnj40ehh5ltg"]
+
+[ext_resource type="PackedScene" uid="uid://dlxk2xnysknbl" path="res://#5 PAC MAN/Assets #5/PacMan.tscn" id="1_a35cb"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_4lcvl"]
+size = Vector3(400, 500, 0)
+
+[node name="PacManBehaviour" type="Node2D"]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+position = Vector2(567, 302)
+mesh = SubResource("BoxMesh_4lcvl")
+
+[node name="PacMan" parent="." instance=ExtResource("1_a35cb")]
+position = Vector2(549, 272)
+scale = Vector2(3.54737, 3.54737)
+collision_mask = 2

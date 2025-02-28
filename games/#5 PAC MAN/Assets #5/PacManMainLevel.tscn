@@ -1,7 +1,9 @@
-[gd_scene load_steps=36 format=3 uid="uid://bmx5n3an2u8m0"]
+[gd_scene load_steps=54 format=3 uid="uid://bmx5n3an2u8m0"]
 
 [ext_resource type="Script" path="res://#5 PAC MAN/Assets #5/scripts/pac_man_main_level.gd" id="1_v46co"]
 [ext_resource type="Texture2D" uid="uid://bsqwladejmohe" path="res://#5 PAC MAN/Assets #5/images/PacManMapSprite.png" id="2_cupuq"]
+[ext_resource type="Script" path="res://#5 PAC MAN/Assets #5/scripts/pac_man.gd" id="3_5d4wi"]
+[ext_resource type="Texture2D" uid="uid://cjh8cuhmgl0dv" path="res://#5 PAC MAN/Assets #5/images/Pacman-removebg-preview.png" id="4_bhcf0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o5w3v"]
 texture = ExtResource("2_cupuq")
@@ -1776,15 +1778,16 @@ sources/0 = SubResource("TileSetAtlasSource_o5w3v")
 size = Vector2(23, 38.4073)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1dffo"]
-size = Vector2(15.4636, 20)
+size = Vector2(15.4636, 17)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4bkkw"]
+size = Vector2(17.1429, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s1yhk"]
-size = Vector2(121, 83)
+size = Vector2(116.497, 70.0517)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ntuys"]
-size = Vector2(123, 41)
+size = Vector2(104, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wlfpy"]
 size = Vector2(202, 20)
@@ -1796,22 +1799,22 @@ size = Vector2(280, 42)
 size = Vector2(35, 163)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wd2hl"]
-size = Vector2(42, 285)
+size = Vector2(31, 273)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rsusr"]
 size = Vector2(163, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c5h7f"]
-size = Vector2(42, 282)
+size = Vector2(29, 265)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_efyvo"]
-size = Vector2(159, 45)
+size = Vector2(153, 27.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bsk3e"]
-size = Vector2(19, 140)
+size = Vector2(16.5, 140)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_itxbr"]
-size = Vector2(216, 20)
+size = Vector2(188, 12.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_opuuh"]
 size = Vector2(15, 156)
@@ -1826,25 +1829,25 @@ size = Vector2(98, 20)
 size = Vector2(15, 221)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a86ic"]
-size = Vector2(43, 165)
+size = Vector2(32, 152.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8wix0"]
-size = Vector2(280, 40)
+size = Vector2(272, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_icmqw"]
-size = Vector2(43, 142)
+size = Vector2(36.5, 136)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ajt3x"]
-size = Vector2(160, 42)
+size = Vector2(143.5, 28.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y66gf"]
-size = Vector2(121, 49)
+size = Vector2(109.25, 30.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4gsge"]
-size = Vector2(41, 166)
+size = Vector2(33.25, 148)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tonbu"]
-size = Vector2(100, 45)
+size = Vector2(91, 30)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5r2nv"]
 size = Vector2(21, 200)
@@ -1853,19 +1856,148 @@ size = Vector2(21, 200)
 size = Vector2(1114, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lefqq"]
-size = Vector2(361, 41)
+size = Vector2(347, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f7vyl"]
-size = Vector2(38, 120)
+size = Vector2(31.5, 106.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r2ce8"]
-size = Vector2(280, 44)
+size = Vector2(267.5, 23.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vhgtu"]
-size = Vector2(43, 161)
+size = Vector2(31, 153.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5eo81"]
+atlas = ExtResource("4_bhcf0")
+region = Rect2(49, 0, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vpm31"]
+atlas = ExtResource("4_bhcf0")
+region = Rect2(65, 0, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iix5o"]
+atlas = ExtResource("4_bhcf0")
+region = Rect2(81, 0, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_75tj0"]
+atlas = ExtResource("4_bhcf0")
+region = Rect2(97, 0, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_je2ol"]
+atlas = ExtResource("4_bhcf0")
+region = Rect2(113, 0, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jjv6n"]
+atlas = ExtResource("4_bhcf0")
+region = Rect2(129, 0, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k82a4"]
+atlas = ExtResource("4_bhcf0")
+region = Rect2(145, 0, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xx4g8"]
+atlas = ExtResource("4_bhcf0")
+region = Rect2(161, 0, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rej01"]
+atlas = ExtResource("4_bhcf0")
+region = Rect2(177, 0, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qpyh0"]
+atlas = ExtResource("4_bhcf0")
+region = Rect2(193, 0, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u2rfa"]
+atlas = ExtResource("4_bhcf0")
+region = Rect2(209, 0, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ma6aq"]
+atlas = ExtResource("4_bhcf0")
+region = Rect2(17, 0, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4rqyn"]
+atlas = ExtResource("4_bhcf0")
+region = Rect2(33, 0, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h14n5"]
+atlas = ExtResource("4_bhcf0")
+region = Rect2(1, 0, 16, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6fjje"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5eo81")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vpm31")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iix5o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_75tj0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_je2ol")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jjv6n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k82a4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xx4g8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rej01")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qpyh0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u2rfa")
+}],
+"loop": true,
+"name": &"death",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ma6aq")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4rqyn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h14n5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4rqyn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ma6aq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4rqyn")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1rap3"]
+radius = 8.0
 
 [node name="PacManMainLevel" type="Node2D"]
 script = ExtResource("1_v46co")
+metadata/_edit_horizontal_guides_ = [613.0]
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(-13, 67)
@@ -1914,7 +2046,7 @@ collision_layer = 2
 collision_mask = 513
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ColiisionShape/StaticBody2D4"]
-position = Vector2(267.8, 6)
+position = Vector2(267.8, 4.5)
 scale = Vector2(36.24, 1)
 shape = SubResource("RectangleShape2D_1dffo")
 
@@ -1924,7 +2056,7 @@ collision_layer = 2
 collision_mask = 513
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ColiisionShape/StaticBody2D5"]
-position = Vector2(-2, 41)
+position = Vector2(-1, 37)
 scale = Vector2(1.68, 10.72)
 shape = SubResource("RectangleShape2D_4bkkw")
 
@@ -1934,7 +2066,7 @@ collision_layer = 2
 collision_mask = 513
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ColiisionShape/StaticBody2D6"]
-position = Vector2(50.5, 31.5)
+position = Vector2(50, 33)
 shape = SubResource("RectangleShape2D_s1yhk")
 
 [node name="StaticBody2D7" type="StaticBody2D" parent="ColiisionShape"]
@@ -1954,7 +2086,8 @@ collision_layer = 2
 collision_mask = 513
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ColiisionShape/StaticBody2D8"]
-position = Vector2(50.5, 31.5)
+position = Vector2(49.4634, 31.8018)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_s1yhk")
 
 [node name="StaticBody2D9" type="StaticBody2D" parent="ColiisionShape"]
@@ -1972,7 +2105,7 @@ collision_layer = 2
 collision_mask = 513
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ColiisionShape/StaticBody2D10"]
-position = Vector2(51.5, 10.5)
+position = Vector2(56, 10.5)
 shape = SubResource("RectangleShape2D_ntuys")
 
 [node name="StaticBody2D11" type="StaticBody2D" parent="ColiisionShape"]
@@ -1981,7 +2114,7 @@ collision_layer = 2
 collision_mask = 513
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ColiisionShape/StaticBody2D11"]
-position = Vector2(51.5, 10.5)
+position = Vector2(50.5, 15)
 shape = SubResource("RectangleShape2D_ntuys")
 
 [node name="StaticBody2D12" type="StaticBody2D" parent="ColiisionShape"]
@@ -2024,7 +2157,7 @@ collision_layer = 2
 collision_mask = 513
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ColiisionShape/StaticBody2D16"]
-position = Vector2(15, 132.5)
+position = Vector2(16.5, 137.5)
 shape = SubResource("RectangleShape2D_wd2hl")
 
 [node name="StaticBody2D17" type="StaticBody2D" parent="ColiisionShape"]
@@ -2041,7 +2174,7 @@ collision_layer = 2
 collision_mask = 513
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ColiisionShape/StaticBody2D18"]
-position = Vector2(11, 131)
+position = Vector2(13.5, 129.5)
 shape = SubResource("RectangleShape2D_c5h7f")
 
 [node name="StaticBody2D19" type="StaticBody2D" parent="ColiisionShape"]
@@ -2050,7 +2183,7 @@ collision_layer = 2
 collision_mask = 513
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ColiisionShape/StaticBody2D19"]
-position = Vector2(69.5, 12.5)
+position = Vector2(72, 15.25)
 shape = SubResource("RectangleShape2D_efyvo")
 
 [node name="StaticBody2D20" type="StaticBody2D" parent="ColiisionShape"]
@@ -2067,7 +2200,7 @@ collision_layer = 2
 collision_mask = 513
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ColiisionShape/StaticBody2D21"]
-position = Vector2(109, 537)
+position = Vector2(103, 535)
 shape = SubResource("RectangleShape2D_itxbr")
 
 [node name="StaticBody2D22" type="StaticBody2D" parent="ColiisionShape"]
@@ -2085,7 +2218,7 @@ collision_layer = 2
 collision_mask = 513
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ColiisionShape/StaticBody2D23"]
-position = Vector2(109, 537)
+position = Vector2(109, 534.5)
 shape = SubResource("RectangleShape2D_itxbr")
 
 [node name="StaticBody2D24" type="StaticBody2D" parent="ColiisionShape"]
@@ -2146,7 +2279,7 @@ collision_layer = 2
 collision_mask = 513
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ColiisionShape/StaticBody2D30"]
-position = Vector2(109, 537)
+position = Vector2(108, 539)
 shape = SubResource("RectangleShape2D_itxbr")
 
 [node name="StaticBody2D31" type="StaticBody2D" parent="ColiisionShape"]
@@ -2164,7 +2297,7 @@ collision_layer = 2
 collision_mask = 513
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ColiisionShape/StaticBody2D32"]
-position = Vector2(-0.5, 60)
+position = Vector2(-2.25, 55)
 shape = SubResource("RectangleShape2D_bsk3e")
 
 [node name="StaticBody2D33" type="StaticBody2D" parent="ColiisionShape"]
@@ -2173,7 +2306,7 @@ collision_layer = 2
 collision_mask = 513
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ColiisionShape/StaticBody2D33"]
-position = Vector2(109, 537)
+position = Vector2(101, 536.625)
 shape = SubResource("RectangleShape2D_itxbr")
 
 [node name="StaticBody2D34" type="StaticBody2D" parent="ColiisionShape"]
@@ -2207,7 +2340,7 @@ collision_layer = 2
 collision_mask = 513
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ColiisionShape/StaticBody2D37"]
-position = Vector2(13, 71)
+position = Vector2(13, 73)
 shape = SubResource("RectangleShape2D_a86ic")
 
 [node name="StaticBody2D38" type="StaticBody2D" parent="ColiisionShape"]
@@ -2216,14 +2349,14 @@ collision_layer = 2
 collision_mask = 513
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ColiisionShape/StaticBody2D38"]
-position = Vector2(13, 71)
+position = Vector2(14, 74)
 shape = SubResource("RectangleShape2D_a86ic")
 
 [node name="StaticBody2D39" type="StaticBody2D" parent="ColiisionShape"]
 collision_layer = 514
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ColiisionShape/StaticBody2D39"]
-position = Vector2(567, 768)
+position = Vector2(569, 769)
 shape = SubResource("RectangleShape2D_8wix0")
 
 [node name="StaticBody2D40" type="StaticBody2D" parent="ColiisionShape"]
@@ -2232,14 +2365,14 @@ collision_layer = 2
 collision_mask = 513
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="ColiisionShape/StaticBody2D40"]
-position = Vector2(19, 46)
+position = Vector2(19, 44)
 shape = SubResource("RectangleShape2D_icmqw")
 
 [node name="StaticBody2D41" type="StaticBody2D" parent="ColiisionShape"]
 collision_layer = 514
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ColiisionShape/StaticBody2D41"]
-position = Vector2(386, 886)
+position = Vector2(389, 891)
 shape = SubResource("RectangleShape2D_ajt3x")
 
 [node name="StaticBody2D42" type="StaticBody2D" parent="ColiisionShape"]
@@ -2247,14 +2380,14 @@ position = Vector2(367, 3)
 collision_layer = 514
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ColiisionShape/StaticBody2D42"]
-position = Vector2(386, 886)
+position = Vector2(383.75, 886.625)
 shape = SubResource("RectangleShape2D_ajt3x")
 
 [node name="StaticBody2D43" type="StaticBody2D" parent="ColiisionShape"]
 collision_layer = 514
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ColiisionShape/StaticBody2D43"]
-position = Vector2(165, 886)
+position = Vector2(168, 890)
 shape = SubResource("RectangleShape2D_y66gf")
 
 [node name="StaticBody2D44" type="StaticBody2D" parent="ColiisionShape"]
@@ -2269,7 +2402,7 @@ position = Vector2(185, 874)
 collision_layer = 514
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ColiisionShape/StaticBody2D45"]
-position = Vector2(21, 73)
+position = Vector2(21, 75)
 shape = SubResource("RectangleShape2D_4gsge")
 
 [node name="StaticBody2D46" type="StaticBody2D" parent="ColiisionShape"]
@@ -2278,7 +2411,7 @@ collision_layer = 2
 collision_mask = 513
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ColiisionShape/StaticBody2D46"]
-position = Vector2(21, 73)
+position = Vector2(24, 76)
 shape = SubResource("RectangleShape2D_4gsge")
 
 [node name="StaticBody2D47" type="StaticBody2D" parent="ColiisionShape"]
@@ -2287,7 +2420,7 @@ collision_layer = 2
 collision_mask = 513
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ColiisionShape/StaticBody2D47"]
-position = Vector2(42, 18)
+position = Vector2(40, 16)
 shape = SubResource("RectangleShape2D_tonbu")
 
 [node name="StaticBody2D48" type="StaticBody2D" parent="ColiisionShape"]
@@ -2296,7 +2429,7 @@ collision_layer = 2
 collision_mask = 513
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ColiisionShape/StaticBody2D48"]
-position = Vector2(42, 18)
+position = Vector2(43, 17)
 shape = SubResource("RectangleShape2D_tonbu")
 
 [node name="StaticBody2D49" type="StaticBody2D" parent="ColiisionShape"]
@@ -2332,7 +2465,7 @@ collision_layer = 2
 collision_mask = 513
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ColiisionShape/StaticBody2D52"]
-position = Vector2(170.5, 17.5)
+position = Vector2(170.5, 13)
 shape = SubResource("RectangleShape2D_lefqq")
 
 [node name="StaticBody2D53" type="StaticBody2D" parent="ColiisionShape"]
@@ -2341,7 +2474,7 @@ collision_layer = 2
 collision_mask = 513
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ColiisionShape/StaticBody2D53"]
-position = Vector2(170.5, 17.5)
+position = Vector2(171.5, 17.5)
 shape = SubResource("RectangleShape2D_lefqq")
 
 [node name="StaticBody2D54" type="StaticBody2D" parent="ColiisionShape"]
@@ -2350,7 +2483,7 @@ collision_layer = 2
 collision_mask = 513
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ColiisionShape/StaticBody2D54"]
-position = Vector2(12, 56)
+position = Vector2(11, 57)
 shape = SubResource("RectangleShape2D_f7vyl")
 
 [node name="StaticBody2D55" type="StaticBody2D" parent="ColiisionShape"]
@@ -2359,7 +2492,7 @@ collision_layer = 2
 collision_mask = 513
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ColiisionShape/StaticBody2D55"]
-position = Vector2(12, 56)
+position = Vector2(11.25, 59.25)
 shape = SubResource("RectangleShape2D_f7vyl")
 
 [node name="StaticBody2D56" type="StaticBody2D" parent="ColiisionShape"]
@@ -2368,7 +2501,7 @@ collision_layer = 2
 collision_mask = 513
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ColiisionShape/StaticBody2D56"]
-position = Vector2(130, 12)
+position = Vector2(133, 13)
 shape = SubResource("RectangleShape2D_r2ce8")
 
 [node name="StaticBody2D57" type="StaticBody2D" parent="ColiisionShape"]
@@ -2377,5 +2510,24 @@ collision_layer = 2
 collision_mask = 513
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ColiisionShape/StaticBody2D57"]
-position = Vector2(26.5, 70.5)
+position = Vector2(26.5, 66.25)
 shape = SubResource("RectangleShape2D_vhgtu")
+
+[node name="PacMan" type="CharacterBody2D" parent="." groups=["Player"]]
+position = Vector2(568, 720)
+scale = Vector2(2.6607, 2.6607)
+collision_mask = 3
+script = ExtResource("3_5d4wi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PacMan"]
+sprite_frames = SubResource("SpriteFrames_6fjje")
+animation = &"idle"
+autoplay = "walking"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PacMan"]
+position = Vector2(0, -2)
+shape = SubResource("CircleShape2D_1rap3")
+
+[node name="WakkaSound" type="AudioStreamPlayer" parent="PacMan"]
+
+[node name="DeathSound" type="AudioStreamPlayer" parent="PacMan"]
