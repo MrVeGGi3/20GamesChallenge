@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c1r01ldxnulk6"
+path="res://.godot/imported/Sound Effect - Pac-Man eating ( Waka Waka ).wav-3e4bf36dfa1e039897f622eca76b270e.sample"
+
+[deps]
+
+source_file="res://#5 PAC MAN/Assets #5/sounds/SFX/Sound Effect - Pac-Man eating ( Waka Waka ).wav"
+dest_files=["res://.godot/imported/Sound Effect - Pac-Man eating ( Waka Waka ).wav-3e4bf36dfa1e039897f622eca76b270e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

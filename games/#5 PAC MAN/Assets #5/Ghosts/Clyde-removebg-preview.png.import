@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1g7c8lnc5fe1"
-path="res://.godot/imported/Pinky-removebg-preview.png-f8fdc3131081d1a703098c68feeeac0e.ctex"
+uid="uid://di3j73ti3fnli"
+path="res://.godot/imported/Clyde-removebg-preview.png-898de37eed6b6363999d59bdd98656a8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://#5 PAC MAN/Assets #5/images/Ghosts/Pinky-removebg-preview.png"
-dest_files=["res://.godot/imported/Pinky-removebg-preview.png-f8fdc3131081d1a703098c68feeeac0e.ctex"]
+source_file="res://#5 PAC MAN/Assets #5/Ghosts/Clyde-removebg-preview.png"
+dest_files=["res://.godot/imported/Clyde-removebg-preview.png-898de37eed6b6363999d59bdd98656a8.ctex"]
 
 [params]
 

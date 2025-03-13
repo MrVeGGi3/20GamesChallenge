@@ -9,8 +9,8 @@ uniform float distortion = 0.01;
 
 void fragment() {
 	vec2 uv = UV + speed * TIME;
-	vec2 noise = 2.0 * texture(noise_texture, UV).rg - vec2(1.0); 
+	vec2 noise = 2.0 * texture(noise_texture, UV).rg - vec2(1.0);
 	 COLOR = texture(TEXTURE, UV + noise * wave_strength);
 	COLOR *= texture(water_normal_noise, SCREEN_UV + noise * distortion);
-	
+
 }

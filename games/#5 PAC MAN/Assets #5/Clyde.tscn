@@ -1,3 +1,35 @@
-[gd_scene format=3 uid="uid://cln4v54i1ye7q"]
+[gd_scene load_steps=2 format=3 uid="uid://cln4v54i1ye7q"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8j7eb"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"scatter",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
 
 [node name="Clyde" type="Area2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8j7eb")
+animation = &"scatter"

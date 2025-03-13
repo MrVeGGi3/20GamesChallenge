@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvf013y2mcisx"
-path="res://.godot/imported/Inky-removebg-preview.png-e4718659c46c3b1445cae56e51e37e94.ctex"
+uid="uid://bangdn7fj88k2"
+path="res://.godot/imported/Ghost.jpg-a4dd9cf035fe9118a0d525668329ddae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://#5 PAC MAN/Assets #5/images/Ghosts/Inky-removebg-preview.png"
-dest_files=["res://.godot/imported/Inky-removebg-preview.png-e4718659c46c3b1445cae56e51e37e94.ctex"]
+source_file="res://#5 PAC MAN/Assets #5/sprites/Ghost.jpg"
+dest_files=["res://.godot/imported/Ghost.jpg-a4dd9cf035fe9118a0d525668329ddae.ctex"]
 
 [params]
 

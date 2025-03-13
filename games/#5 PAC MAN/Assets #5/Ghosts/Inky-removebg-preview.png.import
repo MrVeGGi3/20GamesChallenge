@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dsfs6uk6kugro"
-path="res://.godot/imported/Blinky-removebg-preview.png-5547f1d1a2110b254e8b0ee5c6d8e39e.ctex"
+uid="uid://cvf013y2mcisx"
+path="res://.godot/imported/Inky-removebg-preview.png-cf67fe1e736de4dca6c0c424da247554.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://#5 PAC MAN/Assets #5/images/Ghosts/Blinky-removebg-preview.png"
-dest_files=["res://.godot/imported/Blinky-removebg-preview.png-5547f1d1a2110b254e8b0ee5c6d8e39e.ctex"]
+source_file="res://#5 PAC MAN/Assets #5/Ghosts/Inky-removebg-preview.png"
+dest_files=["res://.godot/imported/Inky-removebg-preview.png-cf67fe1e736de4dca6c0c424da247554.ctex"]
 
 [params]
 

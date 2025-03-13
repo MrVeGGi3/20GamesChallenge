@@ -1,7 +1,9 @@
-[gd_scene load_steps=20 format=3 uid="uid://dlxk2xnysknbl"]
+[gd_scene load_steps=22 format=3 uid="uid://dlxk2xnysknbl"]
 
 [ext_resource type="Texture2D" uid="uid://cjh8cuhmgl0dv" path="res://#5 PAC MAN/Assets #5/images/Pacman-removebg-preview.png" id="1_f0vku"]
 [ext_resource type="Script" path="res://#5 PAC MAN/Assets #5/scripts/pac_man.gd" id="1_tcfwb"]
+[ext_resource type="AudioStream" uid="uid://c1r01ldxnulk6" path="res://#5 PAC MAN/Assets #5/sounds/SFX/Sound Effect - Pac-Man eating ( Waka Waka ).wav" id="3_il8ms"]
+[ext_resource type="AudioStream" uid="uid://d4lorf55fa1p" path="res://#5 PAC MAN/Assets #5/sounds/SFX/Pac-Man Death - Sound Effect (HD).wav" id="4_5in13"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5eo81"]
 atlas = ExtResource("1_f0vku")
@@ -128,14 +130,14 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_7uc4o"]
-radius = 7.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fojo1"]
+size = Vector2(16, 16)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_1rap3"]
-radius = 8.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8q32o"]
+size = Vector2(12, 13)
 
 [node name="PacMan" type="CharacterBody2D" groups=["Player"]]
-collision_mask = 3
+collision_mask = 2
 script = ExtResource("1_tcfwb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -148,13 +150,15 @@ collision_mask = 515
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Area2D"]
 position = Vector2(0, -2)
-shape = SubResource("CircleShape2D_7uc4o")
+shape = SubResource("RectangleShape2D_fojo1")
 debug_color = Color(0.893992, 0.0993632, 0.74008, 0.42)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -2)
-shape = SubResource("CircleShape2D_1rap3")
+position = Vector2(0, -2.5)
+shape = SubResource("RectangleShape2D_8q32o")
 
 [node name="WakkaSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_il8ms")
 
 [node name="DeathSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_5in13")
