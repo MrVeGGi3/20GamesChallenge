@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://el3ft4hyx5rg"]
 
-[ext_resource type="Script" path="res://#3 River Raid/Assets #3/scripts/player.gd" id="1_306fa"]
+[ext_resource type="Script" uid="uid://cyg4vlloju00p" path="res://#3 River Raid/Assets #3/scripts/player.gd" id="1_306fa"]
 [ext_resource type="Texture2D" uid="uid://rwik0ru7fl0l" path="res://#3 River Raid/Assets #3/images/player/Sprite-0001-Sheet.png" id="2_gaiig"]
-[ext_resource type="Script" path="res://#3 River Raid/Assets #3/scripts/ui.gd" id="3_1f12w"]
+[ext_resource type="Script" uid="uid://b64kmu3cpu70g" path="res://#3 River Raid/Assets #3/scripts/ui.gd" id="3_1f12w"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4dme8"]
 atlas = ExtResource("2_gaiig")

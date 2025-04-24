@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://bxqys2ydgie4i"]
 
 [ext_resource type="Texture2D" uid="uid://deuiwvhtcjm3j" path="res://#3 River Raid/Assets #3/sprites/Helicopter.png" id="1_1sqel"]
-[ext_resource type="Script" path="res://#3 River Raid/Assets #3/scripts/enemy_helicopter.gd" id="1_o0l3q"]
+[ext_resource type="Script" uid="uid://cuq7m8ojrr8c1" path="res://#3 River Raid/Assets #3/scripts/enemy_helicopter.gd" id="1_o0l3q"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jlfrl"]
 atlas = ExtResource("1_1sqel")

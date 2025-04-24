@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c14plh1t3nl88"]
 
 [ext_resource type="Texture2D" uid="uid://de4o6mifycyuj" path="res://#4 Asteroids/Assets #4/images/Medium Meteor.png" id="1_rkojp"]
-[ext_resource type="Script" path="res://#4 Asteroids/Assets #4/Scripts/medium_meteor.gd" id="1_xo3ij"]
+[ext_resource type="Script" uid="uid://bs5i1ygwiyew6" path="res://#4 Asteroids/Assets #4/Scripts/medium_meteor.gd" id="1_xo3ij"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q7a5u"]
 size = Vector2(44, 41)

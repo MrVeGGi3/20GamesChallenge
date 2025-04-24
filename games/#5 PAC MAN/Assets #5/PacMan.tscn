@@ -1,7 +1,7 @@
 [gd_scene load_steps=22 format=3 uid="uid://dlxk2xnysknbl"]
 
 [ext_resource type="Texture2D" uid="uid://cjh8cuhmgl0dv" path="res://#5 PAC MAN/Assets #5/images/Pacman-removebg-preview.png" id="1_f0vku"]
-[ext_resource type="Script" path="res://#5 PAC MAN/Assets #5/scripts/pac_man.gd" id="1_tcfwb"]
+[ext_resource type="Script" uid="uid://blv3p34tg6dyt" path="res://#5 PAC MAN/Assets #5/scripts/pac_man.gd" id="1_tcfwb"]
 [ext_resource type="AudioStream" uid="uid://c1r01ldxnulk6" path="res://#5 PAC MAN/Assets #5/sounds/SFX/Sound Effect - Pac-Man eating ( Waka Waka ).wav" id="3_il8ms"]
 [ext_resource type="AudioStream" uid="uid://d4lorf55fa1p" path="res://#5 PAC MAN/Assets #5/sounds/SFX/Pac-Man Death - Sound Effect (HD).wav" id="4_5in13"]
 

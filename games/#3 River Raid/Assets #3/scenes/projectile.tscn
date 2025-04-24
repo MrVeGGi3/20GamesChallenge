@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cblq4x3wxn0oe"]
 
-[ext_resource type="Script" path="res://#3 River Raid/Assets #3/scripts/projectile.gd" id="1_0gj5s"]
+[ext_resource type="Script" uid="uid://dohtxudkcg8xb" path="res://#3 River Raid/Assets #3/scripts/projectile.gd" id="1_0gj5s"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_1yypg"]
 size = Vector2(1, 2)

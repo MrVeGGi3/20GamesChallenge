@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bktu8c1ok12wj"]
 
-[ext_resource type="Script" path="res://#3 River Raid/Assets #3/scripts/airplane_spawner_r.gd" id="1_dla46"]
+[ext_resource type="Script" uid="uid://basqo475cfmo2" path="res://#3 River Raid/Assets #3/scripts/airplane_spawner_r.gd" id="1_dla46"]
 
 [node name="AirplaneSpawner" type="Node2D"]
 script = ExtResource("1_dla46")

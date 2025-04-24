@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://b3tk8kxc1sgws"]
 
-[ext_resource type="Script" path="res://#4 Asteroids/Assets #4/Scripts/small_meteor.gd" id="1_0dxva"]
+[ext_resource type="Script" uid="uid://cktmh2nexqx16" path="res://#4 Asteroids/Assets #4/Scripts/small_meteor.gd" id="1_0dxva"]
 [ext_resource type="Texture2D" uid="uid://klyl3csysvyo" path="res://#4 Asteroids/Assets #4/images/Small Meteor.png" id="1_es3wc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aqy31"]

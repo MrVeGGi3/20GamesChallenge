@@ -1,8 +1,8 @@
 [gd_scene load_steps=16 format=3 uid="uid://32hp7dgk6qmv"]
 
-[ext_resource type="Script" path="res://#3 River Raid/Assets #3/scripts/level_1.gd" id="1_5iikd"]
+[ext_resource type="Script" uid="uid://cexo1m44u5cf" path="res://#3 River Raid/Assets #3/scripts/level_1.gd" id="1_5iikd"]
 [ext_resource type="PackedScene" uid="uid://el3ft4hyx5rg" path="res://#3 River Raid/Assets #3/scenes/player.tscn" id="1_ng1sk"]
-[ext_resource type="Shader" path="res://#3 River Raid/Assets #3/shader/Level1.gdshader" id="1_ovtp1"]
+[ext_resource type="Shader" uid="uid://bnciqgdp41qut" path="res://#3 River Raid/Assets #3/shader/Level1.gdshader" id="1_ovtp1"]
 [ext_resource type="Texture2D" uid="uid://dalqb51egu1kj" path="res://#3 River Raid/Assets #3/images/water.png" id="2_karjw"]
 [ext_resource type="PackedScene" uid="uid://1koy10lrhgc0" path="res://#3 River Raid/Assets #3/scenes/brigde.tscn" id="5_7uon7"]
 [ext_resource type="PackedScene" uid="uid://b1u50v15apubv" path="res://#3 River Raid/Assets #3/scenes/Fuel.tscn" id="6_usktw"]
@@ -20,10 +20,10 @@ noise = SubResource("FastNoiseLite_bbb22")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xp0cy"]
 shader = ExtResource("1_ovtp1")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_7ak75")
 shader_parameter/speed = Vector2(0.5, 0.2)
 shader_parameter/wave_strength = 0.1
 shader_parameter/distortion = 0.01
-shader_parameter/noise_texture = SubResource("NoiseTexture2D_7ak75")
 
 [sub_resource type="QuadMesh" id="QuadMesh_ypryj"]
 size = Vector2(20, 8000)

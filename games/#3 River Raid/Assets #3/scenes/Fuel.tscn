@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://b1u50v15apubv"]
 
-[ext_resource type="Script" path="res://#3 River Raid/Assets #3/scripts/fuel.gd" id="1_wf7y8"]
+[ext_resource type="Script" uid="uid://o4fh7kb5gdej" path="res://#3 River Raid/Assets #3/scripts/fuel.gd" id="1_wf7y8"]
 [ext_resource type="Texture2D" uid="uid://c2grq1vulbxa7" path="res://#3 River Raid/Assets #3/images/Fuel.png" id="2_heju4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8h1nl"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://1koy10lrhgc0"]
 
-[ext_resource type="Script" path="res://#3 River Raid/Assets #3/scripts/brigde.gd" id="1_3rrnk"]
+[ext_resource type="Script" uid="uid://62yml7bon5u" path="res://#3 River Raid/Assets #3/scripts/brigde.gd" id="1_3rrnk"]
 [ext_resource type="Texture2D" uid="uid://chitvx3nam8u1" path="res://#3 River Raid/Assets #3/images/bridge/Bridge.png" id="1_23klw"]
 [ext_resource type="Texture2D" uid="uid://kk4fibm4xm35" path="res://#3 River Raid/Assets #3/images/bridge/brdgate.png" id="2_mswlg"]
 

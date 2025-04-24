@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://djpu0n00mncoi"]
 
-[ext_resource type="Script" path="res://#1 FlappyBird/Assets/scripts/main_level.gd" id="1_4sjrc"]
+[ext_resource type="Script" uid="uid://o7v6ptkvw7vq" path="res://#1 FlappyBird/Assets/scripts/main_level.gd" id="1_4sjrc"]
 [ext_resource type="Texture2D" uid="uid://daty3crrj6yp2" path="res://#1 FlappyBird/Assets/images/background/background-day.png" id="1_vqulh"]
 [ext_resource type="PackedScene" uid="uid://8q4v7eojlalk" path="res://#1 FlappyBird/Assets/scenes/Ground.tscn" id="2_usxaf"]
 [ext_resource type="PackedScene" uid="uid://dulnos3ey8wt3" path="res://#1 FlappyBird/Assets/scenes/Bird.tscn" id="3_i4yr1"]

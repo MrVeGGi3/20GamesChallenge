@@ -14,4 +14,3 @@ mesh = SubResource("BoxMesh_4lcvl")
 [node name="PacMan" parent="." instance=ExtResource("1_a35cb")]
 position = Vector2(549, 272)
 scale = Vector2(3.54737, 3.54737)
-collision_mask = 2

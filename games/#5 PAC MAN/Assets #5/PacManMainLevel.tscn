@@ -1,6 +1,6 @@
 [gd_scene load_steps=37 format=3 uid="uid://bmx5n3an2u8m0"]
 
-[ext_resource type="Script" path="res://#5 PAC MAN/Assets #5/scripts/pac_man_main_level.gd" id="1_v46co"]
+[ext_resource type="Script" uid="uid://bffchhmp5n7yl" path="res://#5 PAC MAN/Assets #5/scripts/pac_man_main_level.gd" id="1_v46co"]
 [ext_resource type="Texture2D" uid="uid://bsqwladejmohe" path="res://#5 PAC MAN/Assets #5/images/PacManMapSprite.png" id="2_cupuq"]
 [ext_resource type="PackedScene" uid="uid://dlxk2xnysknbl" path="res://#5 PAC MAN/Assets #5/PacMan.tscn" id="3_1hoc1"]
 

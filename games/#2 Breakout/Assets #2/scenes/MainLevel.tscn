@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://h1r0okvud1k"]
 
-[ext_resource type="Script" path="res://#2 Breakout/Assets #2/scripts/main_level.gd" id="1_y7gvd"]
+[ext_resource type="Script" uid="uid://be20yckx2d7ny" path="res://#2 Breakout/Assets #2/scripts/main_level.gd" id="1_y7gvd"]
 [ext_resource type="PackedScene" uid="uid://2i4u6qr1t0vc" path="res://#2 Breakout/Assets #2/scenes/player.tscn" id="2_qkeu6"]
 [ext_resource type="PackedScene" uid="uid://dber40yj3iw2" path="res://#2 Breakout/Assets #2/scenes/Ball.tscn" id="3_4kexm"]
 [ext_resource type="PackedScene" uid="uid://b6mc060gv2cdi" path="res://#2 Breakout/Assets #2/scenes/block.tscn" id="4_av1tr"]

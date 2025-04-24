@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://dulnos3ey8wt3"]
 
 [ext_resource type="Texture2D" uid="uid://d0i8x1vj0b6p7" path="res://#1 FlappyBird/Assets/sprites/bird/yellowbird-downflap.png" id="1_2ewvj"]
-[ext_resource type="Script" path="res://#1 FlappyBird/Assets/scripts/bird.gd" id="1_mriiu"]
+[ext_resource type="Script" uid="uid://byaoxdjw1l2wb" path="res://#1 FlappyBird/Assets/scripts/bird.gd" id="1_mriiu"]
 [ext_resource type="Texture2D" uid="uid://cbeu13c74eurm" path="res://#1 FlappyBird/Assets/sprites/bird/yellowbird-midflap.png" id="2_h51tl"]
 [ext_resource type="Texture2D" uid="uid://dbid2qmltglj7" path="res://#1 FlappyBird/Assets/sprites/bird/yellowbird-upflap.png" id="3_k5e3b"]
 

@@ -1,0 +1,87 @@
+[gd_scene load_steps=11 format=3 uid="uid://ded1asyfr1jdp"]
+
+[ext_resource type="Script" uid="uid://n5bhsxj4le7x" path="res://Scripts/Player/mario.gd" id="1_w6kwq"]
+[ext_resource type="Texture2D" uid="uid://de02nkc5pxsv7" path="res://Images/Sprites/Mario_SpriteSheet.png" id="2_t4sm6"]
+[ext_resource type="Script" uid="uid://ngs6iqkfs78i" path="res://Scripts/Player/MarioAnimatedSprite.gd" id="3_t4sm6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2k4s1"]
+size = Vector2(14, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hbmlp"]
+atlas = ExtResource("2_t4sm6")
+region = Rect2(404, 0, 79, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q6mti"]
+atlas = ExtResource("2_t4sm6")
+region = Rect2(9, 0, 79, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jm55t"]
+atlas = ExtResource("2_t4sm6")
+region = Rect2(325, 0, 79, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hyv6n"]
+atlas = ExtResource("2_t4sm6")
+region = Rect2(246, 0, 79, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hixwb"]
+atlas = ExtResource("2_t4sm6")
+region = Rect2(167, 0, 79, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2k4s1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hbmlp")
+}],
+"loop": true,
+"name": &"idle_little",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q6mti")
+}],
+"loop": true,
+"name": &"jumping_little",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jm55t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hyv6n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hixwb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hyv6n")
+}],
+"loop": true,
+"name": &"walking_little",
+"speed": 10.0
+}]
+
+[node name="Mario" type="CharacterBody2D"]
+collision_mask = 2
+platform_floor_layers = 4294967042
+platform_wall_layers = 2
+script = ExtResource("1_w6kwq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_2k4s1")
+
+[node name="MarioAS2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
+position = Vector2(2, 1)
+scale = Vector2(0.241561, 0.241561)
+sprite_frames = SubResource("SpriteFrames_2k4s1")
+animation = &"walking_little"
+autoplay = "idle_little"
+frame_progress = 0.0426278
+script = ExtResource("3_t4sm6")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-194, 42)
+offset = Vector2(300, -100)
+zoom = Vector2(3, 3)

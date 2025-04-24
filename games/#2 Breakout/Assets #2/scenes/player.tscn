@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://2i4u6qr1t0vc"]
 
-[ext_resource type="Script" path="res://#2 Breakout/Assets #2/scripts/player.gd" id="1_vdila"]
+[ext_resource type="Script" uid="uid://crbsjitt6l1hx" path="res://#2 Breakout/Assets #2/scripts/player.gd" id="1_vdila"]
 [ext_resource type="Texture2D" uid="uid://1rfyjv2143hq" path="res://#2 Breakout/Assets #2/images/player/VeGGi3.png" id="1_x36bl"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_uyfur"]
