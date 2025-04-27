@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://lmpv356pet4x"]
+
+[ext_resource type="Script" uid="uid://bfrmni3v7os03" path="res://Scripts/Objects/Coin.gd" id="1_anc3t"]
+[ext_resource type="Texture2D" uid="uid://c6fkxamub0h65" path="res://Images/Objects/MarioCoin.png" id="1_us6iu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_677ww"]
+
+[node name="Coins" type="Area2D"]
+collision_layer = 4
+script = ExtResource("1_anc3t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_677ww")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
+texture = ExtResource("1_us6iu")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

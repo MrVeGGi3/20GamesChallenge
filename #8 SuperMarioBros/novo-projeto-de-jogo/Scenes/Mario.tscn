@@ -1,8 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://ded1asyfr1jdp"]
+[gd_scene load_steps=16 format=3 uid="uid://ded1asyfr1jdp"]
 
 [ext_resource type="Script" uid="uid://n5bhsxj4le7x" path="res://Scripts/Player/mario.gd" id="1_w6kwq"]
 [ext_resource type="Texture2D" uid="uid://de02nkc5pxsv7" path="res://Images/Sprites/Mario_SpriteSheet.png" id="2_t4sm6"]
 [ext_resource type="Script" uid="uid://ngs6iqkfs78i" path="res://Scripts/Player/MarioAnimatedSprite.gd" id="3_t4sm6"]
+[ext_resource type="AudioStream" uid="uid://dw4ndeobwgb0y" path="res://Audios/SFX/Mario/Mario Jump Sound Effect.wav" id="4_hbmlp"]
+[ext_resource type="Script" uid="uid://nj40qv3aojrm" path="res://Scripts/Player/mario_audio_manager.gd" id="4_q6mti"]
+[ext_resource type="AudioStream" uid="uid://cu7xknma45jcm" path="res://Audios/SFX/Coin/Mario Coin Sound - Sound Effect (HD).WAV" id="6_jm55t"]
+[ext_resource type="Script" uid="uid://dbv5ays5hj4ip" path="res://Scripts/Player/collision_area.gd" id="7_hyv6n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2k4s1"]
 size = Vector2(14, 16)
@@ -63,8 +67,11 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jm55t"]
+size = Vector2(12, 4)
+
 [node name="Mario" type="CharacterBody2D"]
-collision_mask = 2
+collision_mask = 12
 platform_floor_layers = 4294967042
 platform_wall_layers = 2
 script = ExtResource("1_w6kwq")
@@ -85,3 +92,24 @@ script = ExtResource("3_t4sm6")
 position = Vector2(-194, 42)
 offset = Vector2(300, -100)
 zoom = Vector2(3, 3)
+
+[node name="MarioAudioManager" type="Node" parent="."]
+script = ExtResource("4_q6mti")
+
+[node name="MarioJumpSound" type="AudioStreamPlayer" parent="MarioAudioManager"]
+stream = ExtResource("4_hbmlp")
+bus = &"SFX"
+
+[node name="CoinCollected" type="AudioStreamPlayer" parent="MarioAudioManager"]
+stream = ExtResource("6_jm55t")
+
+[node name="AttackArea" type="Area2D" parent="."]
+collision_mask = 8
+script = ExtResource("7_hyv6n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_jm55t")
+debug_color = Color(0.942852, 0.0848162, 0.556527, 0.42)
+
+[connection signal="body_entered" from="AttackArea" to="AttackArea" method="_on_body_entered"]

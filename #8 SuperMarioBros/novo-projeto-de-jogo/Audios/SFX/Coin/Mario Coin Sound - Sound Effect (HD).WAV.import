@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cu7xknma45jcm"
+path="res://.godot/imported/Mario Coin Sound - Sound Effect (HD).WAV-5a9a46bbb6ecbab54976122c3f7d2366.sample"
+
+[deps]
+
+source_file="res://Audios/SFX/Coin/Mario Coin Sound - Sound Effect (HD).WAV"
+dest_files=["res://.godot/imported/Mario Coin Sound - Sound Effect (HD).WAV-5a9a46bbb6ecbab54976122c3f7d2366.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -15,6 +15,10 @@ run/main_scene="uid://bwghx7fycnrkj"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+MarioGameManager="*res://Scripts/Player/MarioGameManager.gd"
+
 [input]
 
 esquerda={
@@ -41,6 +45,8 @@ pular={
 
 2d_physics/layer_1="Player"
 2d_physics/layer_2="Ground"
+2d_physics/layer_3="Coins"
+2d_physics/layer_4="Enemies"
 
 [rendering]
 

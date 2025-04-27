@@ -1,7 +1,9 @@
-[gd_scene load_steps=8 format=4 uid="uid://bwghx7fycnrkj"]
+[gd_scene load_steps=10 format=4 uid="uid://bwghx7fycnrkj"]
 
 [ext_resource type="Texture2D" uid="uid://ugwitak6ma4h" path="res://Images/Tilemaps/NES - Super Mario Bros - Tileset.png" id="1_e0lgl"]
 [ext_resource type="PackedScene" uid="uid://ded1asyfr1jdp" path="res://Scenes/Mario.tscn" id="2_86kj7"]
+[ext_resource type="PackedScene" uid="uid://lmpv356pet4x" path="res://Scenes/Objects/Coins.tscn" id="3_chckr"]
+[ext_resource type="PackedScene" uid="uid://iky0qehvfd3q" path="res://Scenes/Enemies/Goomba.tscn" id="4_fuedo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8sc3k"]
 texture = ExtResource("1_e0lgl")
@@ -2001,6 +2003,7 @@ tile_set = SubResource("TileSet_yjhn6")
 
 [node name="Mario" parent="." instance=ExtResource("2_86kj7")]
 position = Vector2(39, 346)
+collision_mask = 14
 
 [node name="Platforms" type="StaticBody2D" parent="."]
 position = Vector2(1, 353)
@@ -2017,3 +2020,17 @@ shape = SubResource("RectangleShape2D_chckr")
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Platforms"]
 position = Vector2(479, -1)
 shape = SubResource("RectangleShape2D_fuedo")
+
+[node name="Coins" type="Node2D" parent="."]
+
+[node name="Coins2" parent="Coins" instance=ExtResource("3_chckr")]
+position = Vector2(91, 313)
+
+[node name="Coins" parent="Coins" instance=ExtResource("3_chckr")]
+position = Vector2(134, 313)
+
+[node name="Coins3" parent="Coins" instance=ExtResource("3_chckr")]
+position = Vector2(112, 313)
+
+[node name="Goomba" parent="." instance=ExtResource("4_fuedo")]
+position = Vector2(179, 344)
