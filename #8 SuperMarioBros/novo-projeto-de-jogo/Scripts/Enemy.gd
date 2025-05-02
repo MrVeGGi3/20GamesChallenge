@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 
 @export_group("Propriedades de Movimento")
-@export_range(10,20,1) var distance_to_walk : float
+@export_range(5,20,1) var distance_to_walk : float
 var directions = ["Left", "Right"]
 var speed : float = 10.00
 
@@ -11,8 +11,10 @@ var speed : float = 10.00
 var current_state 
 var current_direction : String
 var amount_walked : float
-
 var die_timer : Timer 
+var died_score = 100
+
+@onready var score_animation = preload("res://Scenes/Animations/ScoreAnimation.tscn")
 
 enum State
 {	
@@ -37,10 +39,10 @@ func changeDirection():
 		current_direction = "Right"
 		amount_walked = 0.0
 	elif current_direction == "Right":
-		current_direction = "Right"
+		current_direction = "Left"
 		amount_walked = 0.0
 
 func damagedToDie():
 	current_state = State.DIED
+	MarioGameManager.instantiateScoreAnimation(score_animation, self, died_score)
 	die_timer.start()
-	

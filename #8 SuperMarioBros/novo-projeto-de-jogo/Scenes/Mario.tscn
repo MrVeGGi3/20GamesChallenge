@@ -1,15 +1,21 @@
-[gd_scene load_steps=16 format=3 uid="uid://ded1asyfr1jdp"]
+[gd_scene load_steps=19 format=3 uid="uid://ded1asyfr1jdp"]
 
 [ext_resource type="Script" uid="uid://n5bhsxj4le7x" path="res://Scripts/Player/mario.gd" id="1_w6kwq"]
 [ext_resource type="Texture2D" uid="uid://de02nkc5pxsv7" path="res://Images/Sprites/Mario_SpriteSheet.png" id="2_t4sm6"]
 [ext_resource type="Script" uid="uid://ngs6iqkfs78i" path="res://Scripts/Player/MarioAnimatedSprite.gd" id="3_t4sm6"]
+[ext_resource type="PackedScene" uid="uid://bi6au860p83oh" path="res://Scenes/UI/GameOver.tscn" id="4_6h4gq"]
 [ext_resource type="AudioStream" uid="uid://dw4ndeobwgb0y" path="res://Audios/SFX/Mario/Mario Jump Sound Effect.wav" id="4_hbmlp"]
 [ext_resource type="Script" uid="uid://nj40qv3aojrm" path="res://Scripts/Player/mario_audio_manager.gd" id="4_q6mti"]
 [ext_resource type="AudioStream" uid="uid://cu7xknma45jcm" path="res://Audios/SFX/Coin/Mario Coin Sound - Sound Effect (HD).WAV" id="6_jm55t"]
-[ext_resource type="Script" uid="uid://dbv5ays5hj4ip" path="res://Scripts/Player/collision_area.gd" id="7_hyv6n"]
+[ext_resource type="AudioStream" uid="uid://b01mn1tvqba1p" path="res://Audios/SFX/Mario/Mario Death - Sound Effect (HD).wav" id="7_hixwb"]
+[ext_resource type="AudioStream" uid="uid://p4tbyib8rghd" path="res://Audios/SFX/Mario/Mario Game Over (Super Mario Bros.) - Sound Effect for editing.WAV" id="8_320dd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2k4s1"]
 size = Vector2(14, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_320dd"]
+atlas = ExtResource("2_t4sm6")
+region = Rect2(480, 0, 80, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hbmlp"]
 atlas = ExtResource("2_t4sm6")
@@ -33,6 +39,14 @@ region = Rect2(167, 0, 79, 100)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2k4s1"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_320dd")
+}],
+"loop": true,
+"name": &"died",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_hbmlp")
@@ -67,8 +81,8 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jm55t"]
-size = Vector2(12, 4)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_320dd"]
+size = Vector2(11.5, 2.5)
 
 [node name="Mario" type="CharacterBody2D"]
 collision_mask = 12
@@ -83,15 +97,21 @@ shape = SubResource("RectangleShape2D_2k4s1")
 position = Vector2(2, 1)
 scale = Vector2(0.241561, 0.241561)
 sprite_frames = SubResource("SpriteFrames_2k4s1")
-animation = &"walking_little"
+animation = &"idle_little"
 autoplay = "idle_little"
-frame_progress = 0.0426278
 script = ExtResource("3_t4sm6")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-194, 42)
 offset = Vector2(300, -100)
 zoom = Vector2(3, 3)
+
+[node name="GameOver" parent="Camera2D" instance=ExtResource("4_6h4gq")]
+visible = false
+offset_left = -296.0
+offset_top = -411.0
+offset_right = -296.0
+offset_bottom = -411.0
 
 [node name="MarioAudioManager" type="Node" parent="."]
 script = ExtResource("4_q6mti")
@@ -103,13 +123,19 @@ bus = &"SFX"
 [node name="CoinCollected" type="AudioStreamPlayer" parent="MarioAudioManager"]
 stream = ExtResource("6_jm55t")
 
-[node name="AttackArea" type="Area2D" parent="."]
-collision_mask = 8
-script = ExtResource("7_hyv6n")
+[node name="MarioDied" type="AudioStreamPlayer" parent="MarioAudioManager"]
+stream = ExtResource("7_hixwb")
+volume_db = 10.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
-position = Vector2(0, 6)
-shape = SubResource("RectangleShape2D_jm55t")
-debug_color = Color(0.942852, 0.0848162, 0.556527, 0.42)
+[node name="MarioGameOver" type="AudioStreamPlayer" parent="MarioAudioManager"]
+stream = ExtResource("8_320dd")
 
-[connection signal="body_entered" from="AttackArea" to="AttackArea" method="_on_body_entered"]
+[node name="KillEnemyCollision" type="Area2D" parent="."]
+position = Vector2(-3, 4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillEnemyCollision"]
+position = Vector2(4.25, 3)
+shape = SubResource("RectangleShape2D_320dd")
+debug_color = Color(0.97318, 0, 0.435825, 0.42)
+
+[connection signal="finished" from="MarioAudioManager/MarioDied" to="MarioAudioManager" method="_on_mario_died_finished"]

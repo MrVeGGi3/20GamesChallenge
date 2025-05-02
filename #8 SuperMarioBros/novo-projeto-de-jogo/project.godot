@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 MarioGameManager="*res://Scripts/Player/MarioGameManager.gd"
 
+[global_group]
+
+Enemy=""
+
 [input]
 
 esquerda={

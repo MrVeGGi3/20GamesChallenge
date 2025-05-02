@@ -5,6 +5,11 @@ extends Node
 @onready var score = 0
 @onready var lifes = 3
 
+@onready var spawn_point: Marker2D = $SpawnPoint
+@onready var height_to_death: Marker2D = $HeightToDeath
+
+@onready var game_over: Control = $GameOver
+
 
 func instantiateScoreAnimation(scene, object_spawn, score):
 	var instance = scene.instantiate()
@@ -13,3 +18,7 @@ func instantiateScoreAnimation(scene, object_spawn, score):
 	if instance.is_inside_tree():
 		instance.score_label.text = str(score)
 		instance.score_animation.play("Score")
+
+
+	
+	

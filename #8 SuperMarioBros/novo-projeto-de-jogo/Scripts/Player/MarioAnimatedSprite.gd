@@ -22,6 +22,8 @@ func AnimCurrentState(state):
 		mario.State.JUMPING:
 			play("jumping_little")
 			speed_scale = 1.0
+		mario.State.DIED:
+			play("died")
 			
 	if mario.velocity.x > 0:
 		flip_h = true

@@ -1,11 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://iky0qehvfd3q"]
+[gd_scene load_steps=10 format=3 uid="uid://iky0qehvfd3q"]
 
 [ext_resource type="Texture2D" uid="uid://cuxbaqgpj8ysp" path="res://Images/Sprites/Enemies/Goomba.png" id="1_1h4yr"]
 [ext_resource type="Script" uid="uid://cqbv7ogxw3e0k" path="res://Scripts/Goomba.gd" id="1_apkb4"]
 [ext_resource type="Script" uid="uid://dxudu1xs0o6n2" path="res://Scripts/goomba_as_2d.gd" id="3_d1rwa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_apkb4"]
-size = Vector2(16, 16)
+size = Vector2(20, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1h4yr"]
 atlas = ExtResource("1_1h4yr")
@@ -41,8 +41,13 @@ animations = [{
 "speed": 4.0
 }]
 
-[node name="Goomba" type="CharacterBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d1rwa"]
+size = Vector2(21.8493, 9.39627)
+
+[node name="Goomba" type="CharacterBody2D" groups=["Enemy"]]
 collision_layer = 8
+platform_floor_layers = 4294967042
+platform_wall_layers = 2
 script = ExtResource("1_apkb4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -51,9 +56,19 @@ shape = SubResource("RectangleShape2D_apkb4")
 [node name="GoombaAS2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
 sprite_frames = SubResource("SpriteFrames_m801s")
 animation = &"idle"
-frame_progress = 0.17866
+frame = 1
+frame_progress = 0.961832
 script = ExtResource("3_d1rwa")
 
 [node name="DiedTimer" type="Timer" parent="."]
 
+[node name="MarioColiisionArea2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MarioColiisionArea2D"]
+position = Vector2(1.19209e-07, -5.91104)
+scale = Vector2(0.639429, 1.00095)
+shape = SubResource("RectangleShape2D_d1rwa")
+debug_color = Color(0.959176, 0, 0.52308, 0.42)
+
 [connection signal="timeout" from="DiedTimer" to="." method="_on_died_timer_timeout"]
+[connection signal="body_entered" from="MarioColiisionArea2D" to="." method="_on_mario_coliision_area_2d_body_entered"]
