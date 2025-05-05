@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://iky0qehvfd3q"]
 
 [ext_resource type="Texture2D" uid="uid://cuxbaqgpj8ysp" path="res://Images/Sprites/Enemies/Goomba.png" id="1_1h4yr"]
-[ext_resource type="Script" uid="uid://cqbv7ogxw3e0k" path="res://Scripts/Goomba.gd" id="1_apkb4"]
-[ext_resource type="Script" uid="uid://dxudu1xs0o6n2" path="res://Scripts/goomba_as_2d.gd" id="3_d1rwa"]
+[ext_resource type="Script" uid="uid://cqbv7ogxw3e0k" path="res://Scripts/Enemies/Goomba/Goomba.gd" id="1_apkb4"]
+[ext_resource type="Script" uid="uid://dxudu1xs0o6n2" path="res://Scripts/Enemies/Goomba/goomba_as_2d.gd" id="3_d1rwa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_apkb4"]
 size = Vector2(20, 16)

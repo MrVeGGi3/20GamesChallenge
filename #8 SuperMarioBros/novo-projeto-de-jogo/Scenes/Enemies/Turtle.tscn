@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=3 uid="uid://d0yo5nj1dm8uq"]
+
+[ext_resource type="Script" uid="uid://b4uxkxnsl8gl3" path="res://Scripts/Enemies/Turtle/turtle.gd" id="1_o687y"]
+[ext_resource type="Texture2D" uid="uid://26h66vuoebjy" path="res://Images/Sprites/Enemies/Turtle..png" id="1_uamtp"]
+[ext_resource type="Script" uid="uid://s2vwbaamvi3u" path="res://Scripts/Enemies/Turtle/tutle_anim_sprite_2d.gd" id="4_hk2ie"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_km6cp"]
+size = Vector2(20, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ru6n6"]
+atlas = ExtResource("1_uamtp")
+region = Rect2(0, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ea1cx"]
+atlas = ExtResource("1_uamtp")
+region = Rect2(16, 0, 16, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uamtp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ru6n6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ea1cx")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ru6n6"]
+size = Vector2(16, 24)
+
+[node name="Turtle" type="CharacterBody2D"]
+collision_layer = 8
+script = ExtResource("1_o687y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_km6cp")
+
+[node name="TutleAnimSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
+position = Vector2(0, -1)
+sprite_frames = SubResource("SpriteFrames_uamtp")
+animation = &"idle"
+script = ExtResource("4_hk2ie")
+
+[node name="TurtleHitArea2D" type="Area2D" parent="."]
+position = Vector2(0, -1)
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TurtleHitArea2D"]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_ru6n6")
+debug_color = Color(0.780821, 0.436582, 5.77569e-07, 0.42)
+
+[connection signal="body_entered" from="TurtleHitArea2D" to="." method="_on_turtle_hit_area_2d_body_entered"]

@@ -13,6 +13,7 @@ var current_direction : String
 var amount_walked : float
 var die_timer : Timer 
 var died_score = 100
+var mario_hit : bool = false
 
 @onready var score_animation = preload("res://Scenes/Animations/ScoreAnimation.tscn")
 

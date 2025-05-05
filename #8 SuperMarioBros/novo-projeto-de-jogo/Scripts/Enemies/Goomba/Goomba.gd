@@ -6,7 +6,6 @@ extends Enemy
 
 signal goomba_change_state(state)
 
-var mario_hit : bool = false
 
 func _ready() -> void:
 	died_score = 100
