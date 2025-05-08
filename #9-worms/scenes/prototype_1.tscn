@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://co3g3sqrarlvs"]
+
+[ext_resource type="Script" uid="uid://cwmbbfjrpm4ga" path="res://scripts/prototype_1.gd" id="1_d5axt"]
+[ext_resource type="Texture2D" uid="uid://b1pewngtyakuh" path="res://assets/images/DestructiveTerrainTest.png" id="1_x5m6f"]
+
+[node name="Prototype1" type="Node2D"]
+script = ExtResource("1_d5axt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(577, 221)
+scale = Vector2(0.715851, 0.715851)
+texture = ExtResource("1_x5m6f")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
